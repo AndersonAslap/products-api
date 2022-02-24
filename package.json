@@ -1,0 +1,23 @@
+{
+  "name": "project-backend-study-node-001",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AndersonAslap/project-backend-study-node-001.git",
+  "author": "Anderson Adolfo <anderson.adolfo1998@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.44"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.5"
+  }
+}
