@@ -1,9 +1,9 @@
 {
     "type": "postgres",
     "host": "localhost",
-    "port": 5432,
-    "username": "postgres",
-    "password": "postgres",
+    "port": 65432,
+    "username": "aslap",
+    "password": "admin",
     "database": "estudos_node",
     "entities": [
       "./src/modules/**/infra/typeorm/entities/*.ts"
