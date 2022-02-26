@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
-import { Product } from "../infra/typeorm/entities/Products";
-import { IProductsRepository } from "../repositories/IProductsRepository";
+import { Product } from "../../infra/typeorm/entities/Products";
+import { IProductsRepository } from "../../repositories/IProductsRepository";
 
 interface IRequest {
     name: string;
