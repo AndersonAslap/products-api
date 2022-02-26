@@ -3,5 +3,12 @@ const productOne = {
     description: "Description by product One"
 };
 
+const productTwo = {
+    name: "Product Two",
+    description: "Description by product Two"
+}
 
-export { productOne };
+export { 
+    productOne, 
+    productTwo 
+};
