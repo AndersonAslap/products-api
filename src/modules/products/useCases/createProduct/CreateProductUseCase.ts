@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+
 import { Product } from "../../infra/typeorm/entities/Products";
 import { IProductsRepository } from "../../repositories/IProductsRepository";
 
@@ -8,7 +9,7 @@ interface IRequest {
 }
 
 @injectable()
-class CreateProductService {
+class CreateProductUseCase {
     
     constructor(
         @inject('ProductsRepository')
@@ -25,4 +26,4 @@ class CreateProductService {
     }
 }
 
-export { CreateProductService };
+export { CreateProductUseCase };
