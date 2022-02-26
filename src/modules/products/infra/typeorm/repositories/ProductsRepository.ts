@@ -23,7 +23,7 @@ class ProductsRepository implements IProductsRepository {
     }
 
     async findAll() : Promise<Product[]> {
-        const products = this.repository.find();
+        const products = await this.repository.find();
         return products;
     }
     
