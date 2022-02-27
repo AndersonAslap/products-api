@@ -26,6 +26,10 @@ class ProductsRepository implements IProductsRepository {
         const products = await this.repository.find();
         return products;
     }
+
+    async deleteById(id: string) : Promise<void> {
+        await this.repository.delete({ id });
+    }
     
 }
 

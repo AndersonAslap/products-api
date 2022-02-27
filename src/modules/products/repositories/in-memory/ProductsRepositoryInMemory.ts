@@ -23,6 +23,10 @@ class ProductsRepositoryInMemory implements IProductsRepository {
     async findAll() : Promise<Product[]> {
         return this.products;
     }
+
+    async deleteById(id: string) : Promise<void> {
+        this.products = this.products.filter(product => product.id !== id);
+    }
     
 }
 
