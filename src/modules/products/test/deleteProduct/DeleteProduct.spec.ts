@@ -18,20 +18,17 @@ describe("Delete Product Test Unitary", () => {
         deleteProductUseCase = new DeleteProductUseCase(productsRepositoryInMemory);
         listProductsUseCase = new ListProductsUseCase(productsRepositoryInMemory);
 
-        product = await createProductUseCase.execute({
-            name: productOne.name,
-            description: productOne.description
-        });
-
-        await createProductUseCase.execute({
-            name: productTwo.name,
-            description: productTwo.description
-        });
+        [, product] = await Promise.all([
+            createProductUseCase.execute({name: productOne.name, description: productOne.description}),
+            createProductUseCase.execute({name: productTwo.name, description: productTwo.description})
+        ]);
     });
 
     it("should be able delete a product", async () => {
-        await deleteProductUseCase.execute(product.id);
-        const products = await listProductsUseCase.execute();
+        const [, products] = await Promise.all([
+            deleteProductUseCase.execute(product.id),
+            listProductsUseCase.execute(),
+        ]);
 
         expect(products).toHaveLength(1);
     });

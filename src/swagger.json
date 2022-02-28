@@ -17,7 +17,31 @@
             "post": {
                 "tags": ["Products"],
                 "summary": "Create a Product",
-                "description": "Create a Product"
+                "description": "Create a Product",
+                
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref":"#/definitions/Product"
+                            }
+                        }
+                    }
+                },
+
+                "responses": {
+                    "201": {
+                        "description":"Created",
+                        "content": {
+                            "application/json":{
+                                "schema": {
+                                    "$ref":"#/definitions/Product"
+                                }
+                            }
+                        }
+                    }
+                    
+                }
             },
 
             "get": {
@@ -41,13 +65,53 @@
             "put": {
                 "tags": ["Products"],
                 "summary": "Update a Product",
-                "description": "Update a Product"
+                "description": "Update a Product",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref":"#/definitions/Product"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/definitions/Product"
+                                }
+                            }
+                        }
+                    }
+                }
             },
 
             "delete": {
                 "tags": ["Products"],
                 "summary": "Delete a Product",
-                "description": "Delete a Product"
+                "description": "Delete a Product",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "properties":{
+                                    "id": {
+                                        "type":"string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description":"success"
+                    }
+                }
             }
         }
 
@@ -78,6 +142,31 @@
                     "updated_at": {
                         "type": "string"
                     }
+                }
+            }
+        },
+
+        "Product": {
+            "type":"object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+
+                "name": {
+                    "type": "string"
+                },
+
+                "description": {
+                    "type": "string"
+                },
+
+                "created_at": {
+                    "type": "string"
+                },
+
+                "updated_at": {
+                    "type": "string"
                 }
             }
         }

@@ -16,15 +16,10 @@ describe("List All Products Test Unitary", () => {
         createProductUseCase = new CreateProductUseCase(productsRepositoryInMemory);
         listProductsUseCase = new ListProductsUseCase(productsRepositoryInMemory);
 
-        await createProductUseCase.execute({
-            name: productOne.name,
-            description: productOne.description
-        });
-
-        await createProductUseCase.execute({
-            name: productTwo.name,
-            description: productTwo.description
-        });
+        await Promise.all([
+            createProductUseCase.execute({name: productOne.name, description: productOne.description}),
+            createProductUseCase.execute({name: productTwo.name, description: productTwo.description})
+        ]);
     });
 
     it("should be able show all products", async () => {
